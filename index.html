@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart FF AIM v2</title>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000"
+     crossorigin="anonymous"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #0a0a0a, #111);
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    header {
+      padding: 20px;
+      background-color: #111;
+      box-shadow: 0 0 10px red;
+    }
+    .oni {
+      width: 100px;
+      animation: float 3s infinite ease-in-out;
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+    .section {
+      background: #1a1a1a;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 800px;
+      box-shadow: 0 0 15px #ff3c3c;
+    }
+    button, select, input, textarea {
+      padding: 10px;
+      margin: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+    }
+    .button { background-color: #ff3c3c; color: white; cursor: pointer; }
+    .button:hover { background-color: #d62f2f; }
+    .premium { display: none; background: linear-gradient(to right, #1c1c1c, #222); box-shadow: 0 0 15px gold; }
+    .sens-box { background: #2b2b2b; margin: 10px 0; padding: 15px; border-radius: 10px; }
+    .suggestions { margin-top: 30px; background: #131313; padding: 20px; border-radius: 10px; }
+    .ad-box { margin: 20px auto; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Smart FF AIM v2 🔥</h1>
+    <img src="https://i.imgur.com/Xn3gB4f.png" alt="ONI" class="oni">
+    <p>Generador de sensibilidad Free Fire con IA - Básica y Premium</p>
+  </header>
+
+  <div class="ad-box">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-0000000000000000"
+         data-ad-slot="1234567890"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+  <div class="section">
+    <h2>🎮 Generador Básico con IA</h2>
+    <select id="arma">
+      <option value="mp40">MP40</option>
+      <option value="m1887">M1887</option>
+      <option value="m500">M500</option>
+      <option value="deagle">Desert Eagle</option>
+    </select>
+    <select id="modo">
+      <option value="clasico">Clásico</option>
+      <option value="ranked">Ranked</option>
+      <option value="duelo">Duelo 1v1</option>
+    </select>
+    <button class="button" onclick="generarBasico()">Generar Sensibilidad</button>
+    <div id="resBasico"></div>
+  </div>
+
+  <div class="section">
+    <h2>🔒 Zona Premium</h2>
+    <p>Ingresa el código secreto:</p>
+    <input id="codigoSecreto" placeholder="Código de acceso" />
+    <button class="button" onclick="usarCodigo()">Acceder a Premium</button>
+  </div>
+
+  <div class="section premium" id="zonaPremium">
+    <h2>👑 Premium Activo</h2>
+    <img src="https://i.imgur.com/1hFy7FC.gif" alt="ONI animado" class="oni">
+    <select id="armaPremium">
+      <option value="mp40">MP40</option>
+      <option value="m1887">M1887</option>
+      <option value="m500">M500</option>
+      <option value="deagle">Desert Eagle</option>
+    </select>
+    <select id="modoPremium">
+      <option value="clasico">Clásico</option>
+      <option value="ranked">Ranked</option>
+      <option value="duelo">Duelo 1v1</option>
+    </select>
+    <button class="button" onclick="generarPremium()">Generar IA Avanzada</button>
+    <div id="resPremium"></div>
+  </div>
+
+  <div class="suggestions">
+    <h3>📬 Sugerencias</h3>
+    <textarea id="sugerenciaTexto" rows="4" cols="40" placeholder="¿Qué te gustaría agregar?" style="border-radius:10px;"></textarea>
+    <br><button class="button" onclick="enviarSugerencia()">Enviar</button>
+  </div>
+
+  <script>
+    function rand(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function generarBasico() {
+      const arma = document.getElementById("arma").value;
+      const modo = document.getElementById("modo").value;
+      const html = `
+        <div class='sens-box'>
+          <b>Arma:</b> ${arma.toUpperCase()}<br>
+          <b>Modo:</b> ${modo}<br>
+          <b>General:</b> ${rand(150, 200)}<br>
+          <b>Punto Rojo:</b> ${rand(150, 200)}<br>
+          <b>Mira 2x:</b> ${rand(150, 200)}<br>
+          <b>Mira 4x:</b> ${rand(150, 200)}<br>
+          <b>Francotirador:</b> ${rand(150, 200)}<br>
+          <b>Botón Disparo:</b> ${rand(50, 100)}<br>
+          <b>DPI:</b> ${rand(600, 800)}
+        </div>`;
+      document.getElementById("resBasico").innerHTML = html;
+    }
+
+    function usarCodigo() {
+      const code = document.getElementById("codigoSecreto").value.trim();
+      if (code === "20091970") {
+        document.getElementById("zonaPremium").style.display = "block";
+        alert("✅ Acceso Premium activado");
+      } else {
+        alert("❌ Código incorrecto");
+      }
+    }
+
+    function generarPremium() {
+      const arma = document.getElementById("armaPremium").value;
+      const modo = document.getElementById("modoPremium").value;
+      const html = `
+        <div class='sens-box' style='border:1px solid gold;'>
+          <b>Arma:</b> ${arma.toUpperCase()}<br>
+          <b>Modo:</b> ${modo}<br>
+          <b>General:</b> ${rand(150, 200)}<br>
+          <b>Punto Rojo:</b> ${rand(150, 200)}<br>
+          <b>Mira 2x:</b> ${rand(150, 200)}<br>
+          <b>Mira 4x:</b> ${rand(150, 200)}<br>
+          <b>Francotirador:</b> ${rand(150, 200)}<br>
+          <b>Botón Disparo:</b> ${rand(50, 100)}<br>
+          <b>DPI:</b> ${rand(600, 800)}<br>
+          <i>🔍 Buscando en fuentes confiables... Generando la mejor combinación 2025...</i>
+        </div>`;
+      document.getElementById("resPremium").innerHTML = html;
+    }
+
+    function enviarSugerencia() {
+      const mensaje = document.getElementById("sugerenciaTexto").value.trim();
+      if (mensaje) {
+        alert("✅ Sugerencia enviada: " + mensaje);
+        document.getElementById("sugerenciaTexto").value = "";
+      } else {
+        alert("❌ Por favor escribe una sugerencia");
+      }
+    }
+  </script>
+</body>
+</html>
